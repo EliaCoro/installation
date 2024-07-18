@@ -17,7 +17,11 @@ if command -v bash --login rbenv &> /dev/null; then
 else
     # Installa rbenv
     print_status "🔧 Installazione di rbenv in corso..." "installing"
+    sudo apt install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev -y
     curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+    ~/.rbenv/bin/rbenv init
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
     print_status "rbenv è stato installato." "installed"
 fi
 

@@ -21,7 +21,7 @@ else
 
     # Installa i pacchetti PHP 7.4 aggiuntivi
     print_status "Installazione dei pacchetti PHP 7.4 aggiuntivi in corso..." "installing"
-    sudo apt install -y php7.4-cli php7.4-common php7.4-curl php7.4-fpm php7.4-ldap php7.4-mbstring php7.4-pgsql php7.4-xml php7.4-zip php7.4-imap php7.4-gd
+    sudo apt install -y php7.4-cli php7.4-common php7.4-curl php7.4-fpm php7.4-ldap php7.4-mbstring php7.4-pgsql php7.4-xml php7.4-zip php7.4-imap php7.4-gd php7.4-intl
 
     print_status "PHP 7.4 e i pacchetti aggiuntivi sono stati installati." "installed"
 fi

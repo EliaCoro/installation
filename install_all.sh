@@ -11,7 +11,7 @@ fi
 # Trova e esegui tutti gli altri script nella directory corrente
 for script in ./*.sh ./*.bash; do
     # Salta install_all.sh
-    if [[ $script == "./install_all.sh" || $script == "./utils.sh" ]]; then
+    if [[ $script == "./install_all.sh" || $script == "./utils.sh" || $script == "./postgresql16.sh" ]]; then
         continue
     fi
     

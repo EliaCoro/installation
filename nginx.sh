@@ -19,6 +19,7 @@ else
     print_status "Installazione di Nginx in corso..." "installing"
     sudo apt update
     sudo apt install -y nginx
+    sudo usermod -aG www-data $USER
 
     # Verifica se l'installazione è riuscita
     if command -v nginx &> /dev/null; then

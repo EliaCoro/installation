@@ -20,6 +20,12 @@ install_if_not_present() {
 
 # Elenco dei pacchetti da installare
 packages=(
+    build-essential
+    zlib1g-dev
+    libffi-dev
+    libssl-dev
+    libreadline-dev
+    libyaml-dev
     htop
     iotop
     software-properties-common

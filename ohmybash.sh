@@ -34,6 +34,13 @@ print_status "Modifica di .bashrc per impostare il tema powerline..." "installin
 sed -i 's/^OSH_THEME=.*/OSH_THEME="powerline"/' "$HOME/.bashrc"
 print_status "Il tema powerline è stato impostato in .bashrc." "installed"
 
+# Ottieni tutti gli ID dei profili
+profile_ids=$(gsettings get org.gnome.Terminal.ProfilesList list | tr -d "[],' ")
+
+# Imposta il font per ciascun profilo
+for id in $profile_ids; do
+    gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$id/ font "Ubuntu Mono derivative Powerline 13"
+done
 # Aggiorna l'ambiente corrente con le modifiche apportate a .bashrc
 source "$HOME/.bashrc"
 
