@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Funzione per stampare il messaggio con un'emoji
+print_status() {
+    if [[ $2 == "installed" ]]; then
+        echo -e "$1 ✅ "
+    elif [[ $2 == "installing" ]]; then
+        echo -e "$1 🔧"
+    else
+        echo "$1"
+    fi
+}
+
+# Verifica se rbenv è già installato
+if command -v bash --login rbenv &> /dev/null; then
+    print_status "rbenv è già installato." "installed"
+else
+    # Installa rbenv
+    print_status "🔧 Installazione di rbenv in corso..." "installing"
+    curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+    print_status "rbenv è stato installato." "installed"
+fi
+
+# Esegui rbenv-doctor
+print_status "Esecuzione di rbenv-doctor in corso..." "installing"
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor | bash
+print_status "rbenv-doctor è stato eseguito." "installed"
